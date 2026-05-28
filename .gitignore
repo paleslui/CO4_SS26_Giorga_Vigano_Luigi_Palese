@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Virtual environments
+venv*/
+.venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SAM model weights (~375 MB) - download separately, see README
+*.pth
+sam_models/
+
+# Large regenerable dev artifacts
+automatic_segmentation/_dev/*.jpg
+automatic_segmentation/_dev/*.b64
+automatic_segmentation/*.log
+
+# Heavy/regenerable dev artifacts anywhere under _dev (keep .py history, drop binaries)
+automatic_segmentation/_dev/**/*.jpg
+automatic_segmentation/_dev/**/*.html
+automatic_segmentation/_dev/**/*.ipynb
+automatic_segmentation/_dev/**/*.b64

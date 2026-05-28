@@ -1,0 +1,48 @@
+loading SAM (CPU)...
+ok
+[ 1/39] h20-lotus              ok     area=0.028 (24.3s)
+[ 2/39] h2o-fog-100            empty  area=0.000 (20.7s)
+[ 3/39] h2o-fog-5              empty  area=0.000 (17.9s)
+[ 4/39] h2o-fuoc               ok     area=0.073 (17.8s)
+[ 5/39] h2o-metall             ok     area=0.042 (17.3s)
+[ 6/39] h2o-plexig             ok     area=0.020 (16.9s)
+[ 7/39] h2o-print-100          ok     area=0.024 (17.5s)
+[ 8/39] h2o-print-5            ok     area=0.022 (18.7s)
+[ 9/39] h2o-rain-100           ok     area=0.044 (17.3s)
+[10/39] h2o-rain-5             ok     area=0.025 (17.9s)
+[11/39] h2o-teflon             ok     area=0.112 (20.2s)
+[12/39] h2o-tessuto            ok     area=0.017 (23.5s)
+[13/39] h2o-vetro              ok     area=0.017 (23.3s)
+[14/39] i2-fog-100             ok     area=0.063 (20.0s)
+[15/39] i2-fog-5               ok     area=0.026 (19.4s)
+[16/39] i2-fuoc                ok     area=0.003 (21.4s)
+[17/39] i2-lotus               ok     area=0.020 (24.1s)
+[18/39] i2-metall              ok     area=0.027 (17.7s)
+[19/39] i2-plexig              ok     area=0.010 (22.4s)
+[20/39] i2-print-100           ok     area=0.032 (25.4s)
+[21/39] i2-print-5             ok     area=0.019 (25.4s)
+[22/39] i2-rain-100            ok     area=0.016 (21.6s)
+[23/39] i2-rain-5              ok     area=0.017 (22.4s)
+[24/39] i2-teflon              ok     area=0.066 (25.6s)
+[25/39] i2-tessuto             ok     area=0.020 (23.2s)
+[26/39] i2-vetro               ok     area=0.016 (18.5s)
+[27/39] oct-fog-100            ok     area=0.015 (18.2s)
+[28/39] oct-fog-5              ok     area=0.012 (18.1s)
+[29/39] oct-fuoc               ok     area=0.013 (18.4s)
+[30/39] oct-lotus              ok     area=0.019 (19.7s)
+[31/39] oct-metall             ok     area=0.027 (19.2s)
+[32/39] oct-plexig             empty  area=0.000 (18.9s)
+[33/39] oct-print-100          ok     area=0.020 (18.5s)
+[34/39] oct-print-5            ok     area=0.022 (18.0s)
+[35/39] oct-rain-100           ok     area=0.016 (18.2s)
+[36/39] oct-rain-5             ok     area=0.020 (18.6s)
+[37/39] oct-teflon             ok     area=0.016 (21.3s)
+[38/39] oct-tessuto            ok     area=0.023 (22.8s)
+[39/39] oct-vetro              empty  area=0.000 (19.0s)
+
+TOTAL TIME 790s
+counts: {'ok': 35, 'empty': 4}
+  h2o: n=12 {'empty': 2, 'ok': 10}
+  i2: n=13 {'ok': 13}
+  oct: n=13 {'ok': 11, 'empty': 2}
+saved automask_all_overlays.jpg and masks_auto/*.png

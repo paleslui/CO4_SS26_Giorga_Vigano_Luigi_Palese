@@ -1,0 +1,26 @@
+{
+  "basic": {
+    "n": 39,
+    "ok": 35,
+    "ok_rate": 0.897,
+    "mean_solidity_of_ok": 0.814
+  },
+  "watershed": {
+    "n": 39,
+    "ok": 35,
+    "ok_rate": 0.897,
+    "mean_solidity_of_ok": 0.826
+  },
+  "sam": {
+    "n": 39,
+    "ok": 34,
+    "ok_rate": 0.872,
+    "mean_solidity_of_ok": 0.883
+  },
+  "automask": {
+    "n": 39,
+    "ok": 35,
+    "ok_rate": 0.897,
+    "mean_solidity_of_ok": 0.963
+  }
+}

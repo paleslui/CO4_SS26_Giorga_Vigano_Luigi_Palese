@@ -1,0 +1,18 @@
+# Core image processing
+opencv-python==4.13.0.92
+numpy==2.4.4
+scipy==1.17.1
+scikit-image==0.26.0
+matplotlib==3.10.8
+
+# Segment Anything (Method 4 - best). Needs the ViT-B checkpoint (see README).
+torch==2.11.0
+torchvision==0.26.0
+segment-anything==1.0
+
+# Notebook + PDF reading (lecture slides)
+jupyter==1.1.1
+nbformat==5.10.4
+nbconvert==7.17.1
+ipykernel==7.2.0
+pymupdf==1.27.2.3
