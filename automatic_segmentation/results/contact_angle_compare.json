@@ -1,0 +1,62 @@
+[
+  {
+    "image": "h20-lotus",
+    "manual_deg": 139.97729339789132,
+    "automask_deg": 148.7864953224203,
+    "diff_deg": 8.809201924528992
+  },
+  {
+    "image": "h2o-metall",
+    "manual_deg": 77.07081013388448,
+    "automask_deg": 96.04529668063103,
+    "diff_deg": 18.974486546746547
+  },
+  {
+    "image": "h2o-rain-100",
+    "manual_deg": 89.49207341974811,
+    "automask_deg": 106.81301320795797,
+    "diff_deg": 17.320939788209856
+  },
+  {
+    "image": "i2-lotus",
+    "manual_deg": 133.3883351708867,
+    "automask_deg": 131.28616011635663,
+    "diff_deg": -2.102175054530079
+  },
+  {
+    "image": "i2-metall",
+    "manual_deg": 44.86203358358434,
+    "automask_deg": 79.97306191949119,
+    "diff_deg": 35.111028335906845
+  },
+  {
+    "image": "i2-teflon",
+    "manual_deg": 61.49275073143108,
+    "automask_deg": 97.08018158157853,
+    "diff_deg": 35.58743085014745
+  },
+  {
+    "image": "oct-fog-100",
+    "manual_deg": 24.225727100743423,
+    "automask_deg": 46.46958475944445,
+    "diff_deg": 22.243857658701028
+  },
+  {
+    "image": "oct-print-5",
+    "manual_deg": 43.24163761356967,
+    "automask_deg": 81.64194755008975,
+    "diff_deg": 38.40030993652008
+  },
+  {
+    "image": "oct-rain-5",
+    "manual_deg": 44.75553654711627,
+    "automask_deg": 49.190204490462655,
+    "diff_deg": 4.434667943346383
+  },
+  {
+    "image": "oct-teflon",
+    "manual_deg": 34.84684236505497,
+    "automask_deg": 68.1904796817096,
+    "diff_deg": 33.343637316654636
+  }
+]

@@ -27,3 +27,6 @@ automatic_segmentation/_dev/**/*.jpg
 automatic_segmentation/_dev/**/*.html
 automatic_segmentation/_dev/**/*.ipynb
 automatic_segmentation/_dev/**/*.b64
+
+# Notebook builder script (dev artifact — the .ipynb is the deliverable)
+automatic_segmentation/notebook/build_notebook.py

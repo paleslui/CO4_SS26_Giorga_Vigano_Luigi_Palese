@@ -1,0 +1,82 @@
+[
+  {
+    "image": "h20-lotus",
+    "real_deg": 146.7,
+    "manual_deg": 140.0,
+    "automask_deg": 148.8,
+    "err_manual": -6.699999999999989,
+    "err_automask": 2.1000000000000227
+  },
+  {
+    "image": "h2o-metall",
+    "real_deg": 79.6,
+    "manual_deg": 77.1,
+    "automask_deg": 96.0,
+    "err_manual": -2.5,
+    "err_automask": 16.400000000000006
+  },
+  {
+    "image": "h2o-rain-100",
+    "real_deg": 89.8,
+    "manual_deg": 89.5,
+    "automask_deg": 106.8,
+    "err_manual": -0.29999999999999716,
+    "err_automask": 17.0
+  },
+  {
+    "image": "i2-lotus",
+    "real_deg": 120.6,
+    "manual_deg": 133.4,
+    "automask_deg": 131.3,
+    "err_manual": 12.800000000000011,
+    "err_automask": 10.700000000000017
+  },
+  {
+    "image": "i2-metall",
+    "real_deg": 51.3,
+    "manual_deg": 44.9,
+    "automask_deg": 80.0,
+    "err_manual": -6.399999999999999,
+    "err_automask": 28.700000000000003
+  },
+  {
+    "image": "i2-teflon",
+    "real_deg": 74.5,
+    "manual_deg": 61.5,
+    "automask_deg": 97.1,
+    "err_manual": -13.0,
+    "err_automask": 22.599999999999994
+  },
+  {
+    "image": "oct-fog-100",
+    "real_deg": 14.7,
+    "manual_deg": 24.2,
+    "automask_deg": 46.5,
+    "err_manual": 9.5,
+    "err_automask": 31.8
+  },
+  {
+    "image": "oct-print-5",
+    "real_deg": 48.4,
+    "manual_deg": 43.2,
+    "automask_deg": 81.6,
+    "err_manual": -5.199999999999996,
+    "err_automask": 33.199999999999996
+  },
+  {
+    "image": "oct-rain-5",
+    "real_deg": 29.1,
+    "manual_deg": 44.8,
+    "automask_deg": 49.2,
+    "err_manual": 15.699999999999996,
+    "err_automask": 20.1
+  },
+  {
+    "image": "oct-teflon",
+    "real_deg": 37.5,
+    "manual_deg": 34.8,
+    "automask_deg": 68.2,
+    "err_manual": -2.700000000000003,
+    "err_automask": 30.700000000000003
+  }
+]
