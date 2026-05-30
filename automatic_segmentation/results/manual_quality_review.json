@@ -1,0 +1,339 @@
+{
+  "images": [
+    {
+      "index": 1,
+      "image": "h20-lotus",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 2,
+      "image": "h2o-fog-100",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": false
+    },
+    {
+      "index": 3,
+      "image": "h2o-fog-5",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": false
+    },
+    {
+      "index": 4,
+      "image": "h2o-fuoc",
+      "basic": true,
+      "watershed": true,
+      "sam": true,
+      "automask": true
+    },
+    {
+      "index": 5,
+      "image": "h2o-metall",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 6,
+      "image": "h2o-plexig",
+      "basic": true,
+      "watershed": true,
+      "sam": true,
+      "automask": true
+    },
+    {
+      "index": 7,
+      "image": "h2o-print-100",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 8,
+      "image": "h2o-print-5",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 9,
+      "image": "h2o-rain-100",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 10,
+      "image": "h2o-rain-5",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 11,
+      "image": "h2o-teflon",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 12,
+      "image": "h2o-tessuto",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": false
+    },
+    {
+      "index": 13,
+      "image": "h2o-vetro",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 14,
+      "image": "i2-fog-100",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": false
+    },
+    {
+      "index": 15,
+      "image": "i2-fog-5",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": false
+    },
+    {
+      "index": 16,
+      "image": "i2-fuoc",
+      "basic": true,
+      "watershed": true,
+      "sam": true,
+      "automask": false
+    },
+    {
+      "index": 17,
+      "image": "i2-lotus",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 18,
+      "image": "i2-metall",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 19,
+      "image": "i2-plexig",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 20,
+      "image": "i2-print-100",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 21,
+      "image": "i2-print-5",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 22,
+      "image": "i2-rain-100",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 23,
+      "image": "i2-rain-5",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 24,
+      "image": "i2-teflon",
+      "basic": false,
+      "watershed": true,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 25,
+      "image": "i2-tessuto",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 26,
+      "image": "i2-vetro",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 27,
+      "image": "oct-fog-100",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 28,
+      "image": "oct-fog-5",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 29,
+      "image": "oct-fuoc",
+      "basic": false,
+      "watershed": true,
+      "sam": true,
+      "automask": true
+    },
+    {
+      "index": 30,
+      "image": "oct-lotus",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": false
+    },
+    {
+      "index": 31,
+      "image": "oct-metall",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 32,
+      "image": "oct-plexig",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": false
+    },
+    {
+      "index": 33,
+      "image": "oct-print-100",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 34,
+      "image": "oct-print-5",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 35,
+      "image": "oct-rain-100",
+      "basic": false,
+      "watershed": false,
+      "sam": true,
+      "automask": true
+    },
+    {
+      "index": 36,
+      "image": "oct-rain-5",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 37,
+      "image": "oct-teflon",
+      "basic": true,
+      "watershed": true,
+      "sam": true,
+      "automask": true
+    },
+    {
+      "index": 38,
+      "image": "oct-tessuto",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": true
+    },
+    {
+      "index": 39,
+      "image": "oct-vetro",
+      "basic": false,
+      "watershed": false,
+      "sam": false,
+      "automask": false
+    }
+  ],
+  "summary": {
+    "basic": {
+      "good": 4,
+      "total": 39,
+      "fraction": 0.103
+    },
+    "watershed": {
+      "good": 6,
+      "total": 39,
+      "fraction": 0.154
+    },
+    "sam": {
+      "good": 6,
+      "total": 39,
+      "fraction": 0.154
+    },
+    "automask": {
+      "good": 30,
+      "total": 39,
+      "fraction": 0.769
+    }
+  },
+  "method_description": "Visual inspection of every segmentation overlay (contour drawn on the photo) for all 39 images. An image is marked \"good\" if the mask correctly delineates the droplet or correctly returns empty when no droplet is visible."
+}
