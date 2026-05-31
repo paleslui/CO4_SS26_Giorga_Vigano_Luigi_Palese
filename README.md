@@ -52,7 +52,7 @@ exactly that recipe.
 * A few images contain **no discernible droplet** (the liquid spread into an invisible
   film). For those, the correct output is an **empty mask**, not a guess.
 
-Manual ground-truth masks (Giorgia's part) live in `FOTO CO4 MASKS MANUAL/`. **See the
+Manual ground-truth masks (Giorgia's part) live in `automatic_segmentation/results/masks/manual/`. **See the
 important note in [§9](#9-manual-masks--ground-truth) — the current exports are not yet in
 a usable binary form.**
 
@@ -117,7 +117,7 @@ are saved so nothing needs re-running.
 .
 ├── README.md                     ← this file
 ├── fwdfoto/                      ← 39 source images (input)
-├── FOTO CO4 MASKS MANUAL/        ← Giorgia's manual masks (see §9)
+├── automatic_segmentation/results/masks/manual/        ← Giorgia's manual masks (see §9)
 ├── automatic_segmentation/
 │   ├── requirements.txt
 │   ├── methods/                  ← the segmentation library
@@ -257,7 +257,7 @@ honest answer there. See `results/overlays/comparison.jpg` for the visual side-b
 Dice(A,B) = 2|A ∩ B| / (|A| + |B|)        IoU(A,B) = |A ∩ B| / |A ∪ B|   (IoU ≤ Dice)
 ```
 
-**Important:** the current files in `FOTO CO4 MASKS MANUAL/` are **not usable** as ground
+**Important:** the current files in `automatic_segmentation/results/masks/manual/` are **not usable** as ground
 truth — they were exported as grayscale/photo-like images (continuous values 0–255), not
 binary masks. A real mask must be **pure black/white** (droplet = 255, background = 0). To
 re-export correctly in Fiji/ImageJ: trace the droplet → `Edit ▸ Selection ▸ Create Mask` →

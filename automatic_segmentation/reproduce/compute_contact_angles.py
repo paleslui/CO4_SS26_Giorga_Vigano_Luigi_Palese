@@ -17,7 +17,7 @@ import os, json, cv2, numpy as np
 
 HERE   = os.path.dirname(os.path.abspath(__file__))
 REPO   = os.path.abspath(os.path.join(HERE, "..", ".."))
-MAN    = os.path.join(REPO, "FOTO CO4 MASKS MANUAL", "manual_binary")
+MAN    = os.path.join(REPO, "automatic_segmentation", "results", "masks", "manual")
 AUTO   = os.path.join(REPO, "automatic_segmentation", "results", "masks", "automask")
 OUTJSON = os.path.join(REPO, "automatic_segmentation", "results", "contact_angles.json")
 
