@@ -1,4 +1,4 @@
-# Automatic Segmentation of Sessile Droplets — CO4 / MSLS (ZHAW, FS26)
+# Automatic Segmentation of Sessile Droplets: CO4 / MSLS (ZHAW, FS26)
 
 **Authors:** Luigi Palese (automatic segmentation + evaluation), Giorgia Viganò (preprocessing + manual segmentation)
 **Course:** Imaging for the Life Sciences (CO4), Master of Science in Life Sciences
@@ -28,7 +28,7 @@ This is harder than it sounds, for three reasons the data makes obvious:
 1. **The droplets are usually transparent.** A water droplet is a clear lens: its
    *interior* is as bright as the background behind it. Only a thin **rim** (where the
    curved surface bends the light away) is darker. So "the droplet is the dark blob" —
-   the assumption most simple methods make — is simply false here.
+   the assumption most simple methods make: is simply false here.
 2. **Specular reflections.** The shiny gold/metal support plate and the droplet surface
    throw bright highlights that look like edges.
 3. **Huge variability.** 3 liquids × ~13 surfaces. The same algorithm must cope with a
@@ -53,7 +53,7 @@ exactly that recipe.
   film). For those, the correct output is an **empty mask**, not a guess.
 
 Manual ground-truth masks (Giorgia's part) live in `automatic_segmentation/results/masks/manual/`. **See the
-important note in [§9](#9-manual-masks--ground-truth) — the current exports are not yet in
+important note in [§9](#9-manual-masks--ground-truth): the current exports are not yet in
 a usable binary form.**
 
 ---
@@ -79,7 +79,7 @@ curl -L -o ~/Library/Caches/sam_models/sam_vit_b_01ec64.pth \
 The checkpoint path is set once at the top of `automatic_segmentation/methods/automask_segment.py`
 and `sam_segment.py` (the `_CKPT` variable). Change it there if you store the weights
 elsewhere. The weights are **not** committed to git (they are far over GitHub's 100 MB
-limit — see `.gitignore`).
+limit: see `.gitignore`).
 
 ---
 
@@ -98,14 +98,14 @@ python automatic_segmentation/reproduce/run_method.py --method automask   # best
 # Build the side-by-side comparison grid + per-method stats from the saved masks.
 python automatic_segmentation/reproduce/run_compare.py
 
-# Score a method against binary manual masks (once they exist — see §9).
+# Score a method against binary manual masks (once they exist: see §9).
 python automatic_segmentation/reproduce/evaluate.py --method automask \
-    --manual "FOTO CO4 MASKS MANUAL"
+    --manual "automatic_segmentation/results/masks/manual"
 ```
 
 **Speed note:** Methods 1–2 are instant. Method 3 (SAM, point-prompted) runs on Apple-MPS
-in ~1.3 s/image. Method 4 (SAM automatic mask generation) only runs on **CPU** here — the
-automatic generator uses float64, which Apple-MPS does not support — so it takes
+in ~1.3 s/image. Method 4 (SAM automatic mask generation) only runs on **CPU** here: the
+automatic generator uses float64, which Apple-MPS does not support: so it takes
 ~20 s/image (~13 min for the full set). That is acceptable for a one-off batch; the masks
 are saved so nothing needs re-running.
 
@@ -134,7 +134,7 @@ are saved so nothing needs re-running.
 │   │   ├── masks/<method>/       ← 39 output masks per method (.png, 0/255)
 │   │   ├── overlays/             ← per-method grids + comparison.jpg
 │   │   └── compare_stats.json    ← ok-rate & mean solidity per method
-│   └── _dev/                     ← full experimental history (v1–v7, tests) — archived, not needed
+│   └── _dev/                     ← full experimental history (v1–v7, tests): archived, not needed
 ├── Rapport GV EM - Consegnato.pdf   ← previous (manual) contact-angle project, for reference
 └── angolo di contatto.xlsx          ← previous contact-angle measurements, for reference
 ```
@@ -146,12 +146,12 @@ are saved so nothing needs re-running.
 All methods take a BGR image and return a full-size `uint8` mask (0 = background,
 255 = droplet). The progression goes from "pure classical CV" to "foundation model."
 
-### Method 1 — `basic_segment.py` (classical)
+### Method 1: `basic_segment.py` (classical)
 
 Pure OpenCV, follows the instructor's four-step recipe. Key idea: **per-column background
 subtraction.** For each column of the image, the very top is clean back-light ("sky"); we
 subtract that column's own sky value from every pixel below it. A droplet then shows up as
-a *deviation* from the sky **whether it is darker or brighter** — which is the trick that
+a *deviation* from the sky **whether it is darker or brighter**: which is the trick that
 handles transparent droplets. Steps:
 
 1. Grayscale + median blur.
@@ -165,15 +165,15 @@ handles transparent droplets. Steps:
 **Verdict:** works on clear-rimmed droplets; fails where the droplet is flat and looks
 like the plate, and is highly sensitive to the baseline being correct.
 
-### Method 2 — `watershed_segment.py` (classical refinement)
+### Method 2: `watershed_segment.py` (classical refinement)
 
 Takes Method 1's mask, erodes it to a "sure droplet" seed and dilates it to a "sure
 background" seed, then runs **watershed** to snap the boundary to the real image edge.
 **Verdict:** sharper outlines (mean solidity 0.81 → 0.83) but it is a *refiner, not a
-re-locator* — if Method 1 picked the wrong region, watershed just sharpens the wrong
+re-locator*: if Method 1 picked the wrong region, watershed just sharpens the wrong
 region.
 
-### Method 3 — `sam_segment.py` (SAM, prompted)
+### Method 3: `sam_segment.py` (SAM, prompted)
 
 Uses Meta's **Segment Anything Model**. We give SAM one positive point prompt placed at
 "the column with the most non-sky deviation just above the baseline," plus negative
@@ -183,7 +183,7 @@ bright Teflon dome), but the single point prompt is brittle: on a transparent dr
 bright *plate edge* deviates more than the clear droplet, so the point sometimes lands on
 the plate.
 
-### Method 4 — `automask_segment.py` (SAM automatic + shape selection) ★ recommended
+### Method 4: `automask_segment.py` (SAM automatic + shape selection) ★ recommended
 
 The breakthrough. Instead of guessing one prompt point, we let SAM's **automatic mask
 generator** propose *every* object in the image with no prompt, then **select the droplet
@@ -195,16 +195,16 @@ by shape**:
 * keep a plausible size (0.3 %–25 % of the frame),
 * use a rough baseline only as a soft tie-breaker.
 
-**Verdict:** the cleanest masks by a wide margin (solidity 0.96), and — crucially — it no
+**Verdict:** the cleanest masks by a wide margin (solidity 0.96), and: crucially: it no
 longer depends on a precise baseline, which was the single biggest source of failure (see
 §7). This is the recommended method.
 
 ---
 
-## 7. What we tried — the honest history
+## 7. What we tried: the honest history
 
 This section exists so the work can be understood, not just rerun. The short version:
-**the bottleneck was never the segmentation model — it was a brittle hand-rolled baseline
+**the bottleneck was never the segmentation model: it was a brittle hand-rolled baseline
 detector feeding every method bad constraints.**
 
 * **First classical attempts** assumed "droplet = darker than background." This works only
@@ -214,7 +214,7 @@ detector feeding every method bad constraints.**
   the polarity heuristic occasionally voted the wrong way, and flat droplets still got
   confused with the plate's specular line.
 * **An "ensemble" router** (run several methods, keep the best by a quality score) was
-  built — and then abandoned. The quality score was a pile of hand-picked thresholds that
+  built: and then abandoned. The quality score was a pile of hand-picked thresholds that
   overfit to the failures we had already seen; it is *not* a principled metric, and a
   compact wrong blob could out-score a slightly ragged correct one. Lesson: selecting the
   least-bad of several bad outputs does not fix bad outputs.
@@ -222,7 +222,7 @@ detector feeding every method bad constraints.**
   *missed entirely*. We traced it to the baseline detector landing ~250 px too low (on the
   plate's bottom rim instead of the contact line), which made every method discard the
   correct droplet for "not sitting on the baseline." Three different baseline detectors all
-  topped out around ~55 % correct — gradient-based baseline detection is fundamentally
+  topped out around ~55 % correct: gradient-based baseline detection is fundamentally
   unreliable on shiny plates.
 * **The fix was to stop depending on the baseline.** Method 4 selects the droplet by shape
   among SAM's proposals and uses the baseline only as a soft hint. That single change fixed
@@ -236,15 +236,15 @@ Over all 39 images (from `results/compare_stats.json`):
 
 | Method     | segmented (ok) | mean solidity of masks | notes |
 |------------|:--------------:|:----------------------:|-------|
-| basic      | 35 / 39        | 0.81 | many "ok" masks are actually wrong (a line on the plate) |
-| watershed  | 35 / 39        | 0.83 | same locations as basic, sharper edges |
-| sam        | 34 / 39        | 0.88 | cleaner; brittle point prompt |
-| **automask** | **35 / 39**  | **0.96** | cleanest by far; baseline-independent |
+| basic      | 4 / 39 (10.3%)  | 0.81 | high solidity proxy was misleading: per-image visual review showed most masks are wrong (a line on the plate) |
+| watershed  | 6 / 39 (15.4%)  | 0.83 | same locations as basic, sharper edges; per-image visual review |
+| sam        | 6 / 39 (15.4%)  | 0.88 | cleaner; brittle point prompt (per-image visual review) |
+| **automask** | **30 / 39 (76.9%)** | **0.96** | cleanest by far; baseline-independent (per-image visual review) |
 
 "ok" only means a non-empty mask was produced; **solidity** (mask area ÷ convex-hull area)
 is the better quality proxy because it penalises ragged/plate-smeared masks. The steady
 climb in solidity is the real story. Method 4's 4 "empties" (h2o-fog-100, h2o-fog-5,
-oct-plexig, oct-vetro) are images with no clearly discernible droplet — empty is the
+oct-plexig, oct-vetro) are images with no clearly discernible droplet: empty is the
 honest answer there. See `results/overlays/comparison.jpg` for the visual side-by-side.
 
 ---
@@ -258,7 +258,7 @@ Dice(A,B) = 2|A ∩ B| / (|A| + |B|)        IoU(A,B) = |A ∩ B| / |A ∪ B|   (
 ```
 
 **Important:** the current files in `automatic_segmentation/results/masks/manual/` are **not usable** as ground
-truth — they were exported as grayscale/photo-like images (continuous values 0–255), not
+truth: they were exported as grayscale/photo-like images (continuous values 0–255), not
 binary masks. A real mask must be **pure black/white** (droplet = 255, background = 0). To
 re-export correctly in Fiji/ImageJ: trace the droplet → `Edit ▸ Selection ▸ Create Mask` →
 `File ▸ Save As ▸ PNG`, same base name + `_mask`, no crop/resize so it stays 1600×1200.
@@ -269,7 +269,7 @@ Once those exist, `evaluate.py` produces the Dice/IoU table automatically.
 
 ## 10. Limitations & honest notes
 
-* **Classical methods (1–2) do not generalise** across surface types — exactly the
+* **Classical methods (1–2) do not generalise** across surface types: exactly the
   limitation the lecture (Block 6-04) lists for thresholding/region-growing.
 * **Method 4 needs CPU** here (~20 s/image) because Apple-MPS lacks float64 for SAM's
   automatic generator. On a CUDA GPU it would be far faster.
@@ -284,5 +284,5 @@ Once those exist, `evaluate.py` produces the Dice/IoU table automatically.
 The most transferable lesson from this project: *before blaming the model, check what
 you're feeding it.* Days were spent tuning thresholds and quality scores, when the actual
 fault was an upstream baseline detector silently throwing away correct results. Removing
-that dependency — by letting a foundation model propose objects and selecting by shape —
+that dependency: by letting a foundation model propose objects and selecting by shape —
 fixed most of the dataset in a single change.
